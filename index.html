@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html>
+  <head>
+	<meta charset="utf-8">
+	<title>360&deg; Rundgang durch Bad & Heizung Schimmel GmbH</title>
+	<meta name="description" content="360&deg; Rundgang durch Bad & Heizung Schimmel GmbH">
+	
+	<!-- Remote Version der Skripte vom CDN -->
+	<script src="https://aframe.io/releases/1.0.4/aframe.min.js"></script>
+	<script src="https://unpkg.com/aframe-event-set-component@5/dist/aframe-event-set-component.min.js"></script>
+	<script src="https://unpkg.com/aframe-layout-component@5.3.0/dist/aframe-layout-component.min.js"></script>
+	<script src="https://unpkg.com/aframe-template-component@3.2.1/dist/aframe-template-component.min.js"></script>
+	<script src="https://unpkg.com/aframe-proxy-event-component@2.1.0/dist/aframe-proxy-event-component.min.js"></script>
+	<script src="./scripts/set-image.js"></script>
+	<!-- Lokale Version der Skripte
+	<script src="./scripts/aframe.min.js"></script>
+	<script src="./scripts/aframe-event-set-component.min.js"></script>
+	<script src="./scripts/aframe-layout-component.min.js"></script>
+	<script src="./scripts/aframe-template-component.min.js"></script>
+	<script src="./scripts/set-image.js"></script>-->
+
+	<!-- Vorlage für die Navigationspfeile zur Wiederverwendung 
+	     im Attribut "set-image" werden alle relevanten Einstellungen gesteuert
+		 Die changeRate ist die Zeit zwischen den automatischen Bildwechseln
+		 Sie entspricht grob der Zeit in Sekunden / 60 -->
+	<script id="link" type="text/html">
+	  <a-entity class="link"
+		geometry="primitive: plane; height: 1; width: 1"
+		material="shader: flat; src: ${thumb}; transparent: true; alphaTest: 0.5"
+		event-set__mouseenter="scale: 1.2 1.2 1"
+		event-set__mouseleave="scale: 1 1 1"
+		set-image="on: click; target: #image-360; src: ${src}; maxImages: 28; changeRate: 820;"		
+		sound="on: click; src: #click-sound"></a-entity>
+	</script>
+  </head>
+  <body>
+	  <h1>Herzlich Willkommen in ihrem Wohnbad</h1>
+	  <div style="width: 100%; height: 300px;">
+	<!-- Für eine fensterfüllende Darstellung von Beginn an muss das Attribut 
+	     embedded entfernt werden. -->	
+    <a-scene embedded >
+	  <!-- Der Timeout gibt an, wann die Szene auf jeden Fall dargestellt wird, 
+	       egal ob alle Bilder vorher schon geladen waren oder nicht.-->
+      <a-assets timeout="5000">
+	  <img id="left" crossorigin="anonymous" src="./img/arrow-left-512.png">
+      <img id="right" crossorigin="anonymous" src="./img/arrow-right-512.png">
+      <audio id="click-sound" src="./sound/Mouse-Click-01.mp3"></audio> 
+	  
+		<!--Hier müssen die Bilder referenziert werden, damit sie in der Galerie verfügbar sind.
+			Auch die Reihenfolge lässt sich über die Zahlen an der ID steuern. 
+		    Zusätzlich muss im set-image Attribut oben der Maximalwert angepasst werden -->
+      <img id="img1" alt="Eingang" crossorigin="anonymous" src="./img/Bad-Schimmel-4k-02.jpg">
+      <img id="img2" alt="Zukunft" crossorigin="anonymous" src="./img/Bad-Schimmel-4k-03.jpg">
+      <img id="img3" alt="Vitrinen" crossorigin="anonymous" src="./img/Bad-Schimmel-4k-04.jpg">
+      <img id="img4" alt="Wegweiser" crossorigin="anonymous" src="./img/Bad-Schimmel-4k-05.jpg">
+      <img id="img5" alt="Puppe von vorne" crossorigin="anonymous" src="./img/Bad-Schimmel-4k-06.jpg">
+      <img id="img6" alt="Dusche bei Fenster" crossorigin="anonymous" src="./img/Bad-Schimmel-4k-07.jpg">
+      <img id="img7" alt="Badewanne bei Fenster" crossorigin="anonymous" src="./img/Bad-Schimmel-4k-08.jpg">
+      <img id="img8" alt="Puppe von hinten" crossorigin="anonymous" src="./img/Bad-Schimmel-4k-09.jpg">      
+      <img id="img9" alt="Pläne Wand" crossorigin="anonymous" src="./img/Bad-Schimmel-4k-11.jpg">
+	  <img id="img10" alt="Treppe unten" crossorigin="anonymous" src="./img/Bad-Schimmel-4k-10.jpg"> 
+	  <img id="img11" alt="WC1" crossorigin="anonymous" src="./img/Bad-Schimmel-4k-31.jpg">
+	  <img id="img12" alt="WC1" crossorigin="anonymous" src="./img/Bad-Schimmel-4k-32.jpg">	 
+	  <img id="img13" alt="Treppe Mitte" crossorigin="anonymous" src="./img/Bad-Schimmel-4k-12.jpg">
+	  <img id="img14" alt="Treppe oben" crossorigin="anonymous" src="./img/Bad-Schimmel-4k-13.jpg">
+	  <img id="img15" alt="Hauskraftwerk" crossorigin="anonymous" src="./img/Bad-Schimmel-4k-14.jpg">
+	  <img id="img16" alt="Sauna1" crossorigin="anonymous" src="./img/Bad-Schimmel-4k-15.jpg">
+	  <img id="img17" alt="Sauna 2" crossorigin="anonymous" src="./img/Bad-Schimmel-4k-16.jpg">
+	  <img id="img18" alt="Liegen" crossorigin="anonymous" src="./img/Bad-Schimmel-4k-17.jpg">
+	  <img id="img19" alt="Dart" crossorigin="anonymous" src="./img/Bad-Schimmel-4k-18.jpg">
+	  <img id="img20" alt="Galerie der Sinne" crossorigin="anonymous" src="./img/Bad-Schimmel-4k-19.jpg">
+	  <img id="img21" alt="Galerie - Station 5" crossorigin="anonymous" src="./img/Bad-Schimmel-4k-20.jpg">
+	  <img id="img22" alt="Künstliche Intelligenz" crossorigin="anonymous" src="./img/Bad-Schimmel-4k-21.jpg">
+	  <img id="img23" alt="Plakat: Markt" crossorigin="anonymous" src="./img/Bad-Schimmel-4k-22.jpg">
+	  <img id="img24" alt="Projekt Cockpit" crossorigin="anonymous" src="./img/Bad-Schimmel-4k-23.jpg">
+	  <img id="img25" alt="Säule" crossorigin="anonymous" src="./img/Bad-Schimmel-4k-24.jpg">
+	  <img id="img26" alt="System Klimaktiv" crossorigin="anonymous" src="./img/Bad-Schimmel-4k-25.jpg">
+	  <img id="img27" alt="Beamer" crossorigin="anonymous" src="./img/Bad-Schimmel-4k-26.jpg">
+	  <img id="img28" alt="Büro mit PC" crossorigin="anonymous" src="./img/Bad-Schimmel-4k-30.jpg">
+</a-assets>
+
+		<!-- 360-Grad Bild als Hintergrund -->
+		<a-sky id="image-360" radius="10" src="#img1" rotation="0 -115 0"
+				animation__fade="property: components.material.material.color; type: color; from: #FFF; to: #000; dur: 300; startEvents: fade"
+				animation__fadeback="property: components.material.material.color; type: color; from: #000; to: #FFF; dur: 300; startEvents: animationcomplete__fade"></a-sky>
+
+		<!-- Navigationspfeile -->
+		
+			<a-entity id="linkLeft" template="src: #link" data-src="linkLeft" data-thumb="#left" 
+			layout="type: line; margin: 0" position="-4.2 -1 -3.5" rotation="0 30 0"  ></a-entity>
+			
+			<a-entity id="linkRight" template="src: #link" data-src="linkRight" data-thumb="#right"
+			layout="type: line; margin: 0" position="4 -1 -3.5" rotation="0 -30 0" ></a-entity>
+
+
+		<!-- Kamera + Cursor. -->
+		<a-entity camera look-controls id="myCam">
+		<a-cursor
+			id="cursor"
+			animation__click="property: scale; startEvents: click; from: 0.1 0.1 0.1; to: 1 1 1; dur: 150"
+			animation__fusing="property: fusing; startEvents: fusing; from: 1 1 1; to: 0.1 0.1 0.1; dur: 1500"
+			event-set__mouseenter="_event: mouseenter; color: springgreen"
+			event-set__mouseleave="_event: mouseleave; color: black"
+			raycaster="objects: .link"></a-cursor>
+		</a-entity>
+	</a-scene>
+	</div>
+	<footer>Alle Rechte an der Marke liegen bei der Bad Schimmel GmbH</footer>
+	<!-- Zum Initialisieren des Bildzählers auf 1 an zentraler Stelle. -->
+	<script>document.querySelector('a-scene').addEventListener('loaded', function () {
+        AFRAME.scenes[0].states.currentImg = 1;
+        })</script>
+	</body>
+</html>
